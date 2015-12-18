@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.herprogramacion.mysocialmediapotenciado.R;
 
@@ -13,6 +15,33 @@ public class CatalogoActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogo);
+
+        //Sipnners (menus selección)
+
+        final String[] datosMarcas = new String[]{"Pirelli", "Ama", "Motul"};
+        ArrayAdapter<String> adaptadorMarcas = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosMarcas);
+        Spinner spinnerMarcas = (Spinner)findViewById(R.id.spinnerMarcas);
+        adaptadorMarcas.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+        spinnerMarcas.setAdapter(adaptadorMarcas);
+
+
+        final String[] datosTipos = new String[]{"Accesorios", "Amortiguadores", "Barrales"};
+        Spinner spinnerTipos = (Spinner)findViewById(R.id.spinnerTipos);
+        ArrayAdapter<String> adaptadorTipos = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosTipos);
+        adaptadorTipos.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+        spinnerTipos.setAdapter(adaptadorTipos);
+
+        final String[] datosSubtipos = new String[]{"Bidones", "Bielas", "Cubiertas"};
+        ArrayAdapter<String> adaptadorSubtipos = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosSubtipos);
+        Spinner spinnerSubtipos = (Spinner)findViewById(R.id.spinnerSubtipos);
+        adaptadorSubtipos.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+        spinnerSubtipos.setAdapter(adaptadorSubtipos);
+
+
+
     }
 
     @Override
@@ -36,4 +65,6 @@ public class CatalogoActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
