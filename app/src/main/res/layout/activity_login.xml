@@ -58,7 +58,11 @@ tools:context="com.herprogramacion.intercapappBeta.LoginActivity">
             android:id="@+id/btn_login"
             android:onClick="OnClick"
             android:layout_gravity="center_horizontal"
-            android:nestedScrollingEnabled="false" />
+            android:nestedScrollingEnabled="false"
+            android:background="#009688"
+            android:textColor="#FFF"
+
+            />
     </LinearLayout>
 
 </RelativeLayout>

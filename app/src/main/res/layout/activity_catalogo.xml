@@ -22,11 +22,13 @@
             android:layout_height="120dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marcas de productos"
                 android:id="@+id/textMarcas"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#666" />
 
             <Spinner android:id="@+id/spinnerMarcas"
                 android:layout_width="match_parent"
@@ -39,11 +41,13 @@
             android:layout_height="120dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tipos"
                 android:id="@+id/textTipos"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#666" />
 
             <Spinner android:id="@+id/spinnerTipos"
                 android:layout_width="match_parent"
@@ -56,11 +60,13 @@
             android:layout_height="120dp">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Subtipos"
                 android:id="@+id/textSubtipos"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#666" />
 
             <Spinner android:id="@+id/spinnerSubtipos"
                 android:layout_width="match_parent"
@@ -69,11 +75,14 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BUSCAR"
             android:id="@+id/btnBuscar"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="#009688"
+            android:textColor="#FFF"
+            />
 
 
     </LinearLayout>

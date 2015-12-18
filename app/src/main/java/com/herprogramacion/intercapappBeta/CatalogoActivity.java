@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -19,7 +21,7 @@ public class CatalogoActivity extends ActionBarActivity {
         //Sipnners (menus selección)
 
         final String[] datosMarcas = new String[]{"Pirelli", "Ama", "Motul"};
-        ArrayAdapter<String> adaptadorMarcas = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosMarcas);
+        ArrayAdapter<String> adaptadorMarcas = new ArrayAdapter<String>(this,R.layout.ebiz_spinner_item,datosMarcas);
         Spinner spinnerMarcas = (Spinner)findViewById(R.id.spinnerMarcas);
         adaptadorMarcas.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
@@ -28,13 +30,13 @@ public class CatalogoActivity extends ActionBarActivity {
 
         final String[] datosTipos = new String[]{"Accesorios", "Amortiguadores", "Barrales"};
         Spinner spinnerTipos = (Spinner)findViewById(R.id.spinnerTipos);
-        ArrayAdapter<String> adaptadorTipos = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosTipos);
+        ArrayAdapter<String> adaptadorTipos = new ArrayAdapter<String>(this,R.layout.ebiz_spinner_item,datosTipos);
         adaptadorTipos.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
         spinnerTipos.setAdapter(adaptadorTipos);
 
         final String[] datosSubtipos = new String[]{"Bidones", "Bielas", "Cubiertas"};
-        ArrayAdapter<String> adaptadorSubtipos = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosSubtipos);
+        ArrayAdapter<String> adaptadorSubtipos = new ArrayAdapter<String>(this,R.layout.ebiz_spinner_item,datosSubtipos);
         Spinner spinnerSubtipos = (Spinner)findViewById(R.id.spinnerSubtipos);
         adaptadorSubtipos.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
@@ -43,6 +45,7 @@ public class CatalogoActivity extends ActionBarActivity {
 
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

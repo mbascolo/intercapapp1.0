@@ -29,7 +29,6 @@ public class MainActivity extends ActionBarActivity {
 
         // Crear adaptador
         adapter = new PostAdapter(this);
-
         listView.setAdapter(adapter);
     }
 
