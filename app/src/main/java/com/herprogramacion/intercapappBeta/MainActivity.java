@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.herprogramacion.mysocialmediapotenciado.R;
 
@@ -30,7 +34,24 @@ public class MainActivity extends ActionBarActivity {
         // Crear adaptador
         adapter = new PostAdapter(this);
         listView.setAdapter(adapter);
+
+        //Click en items
+        listView.setClickable(true);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
+                Post elegido = (Post) pariente.getItemAtPosition(posicion);
+
+                CharSequence texto = "Seleccionado: " + elegido.getdescripcion();
+                Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
     }
+
+
+
 
     public void onClick(View v){
         String[] to = {"mbascolo@intercap.com.ar"};
