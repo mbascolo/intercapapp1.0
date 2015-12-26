@@ -38,21 +38,36 @@
         android:layout_alignLeft="@+id/textoTitulo" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="51dp"
         android:layout_below="@+id/textoDescripcion"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:layout_alignParentEnd="false">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAS INFO"
+            android:onClick="onMasInfo"
+            android:textColor="#FFF"
+            android:id="@+id/btnMasinfo"
+            android:background="#009688"
+            android:layout_marginRight="20dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reservar"
             android:onClick="onClick"
+            android:background="#FF9933" android:textColor="#FFF" android:shadowColor="#CCC"
             android:id="@+id/btn_reservar2"
             android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
 

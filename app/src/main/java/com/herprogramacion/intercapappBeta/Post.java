@@ -1,6 +1,10 @@
 package com.herprogramacion.intercapappBeta;
 
-public class Post {
+import java.io.Serializable;
+
+
+@SuppressWarnings("serial")
+public class Post implements Serializable {
     // Atributos
     private String nroPool;
     private String descripcion;

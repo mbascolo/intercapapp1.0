@@ -36,20 +36,19 @@ public class MainActivity extends ActionBarActivity {
         listView.setAdapter(adapter);
 
         //Click en items
-        listView.setClickable(true);
+        //listView.setClickable(true);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
-                Post elegido = (Post) pariente.getItemAtPosition(posicion);
+        //listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //    @Override
+        //    public void onItemClick(AdapterView<?> parent, View view, int posicion, long id) {
+        //        Post elegido = (Post) parent.getItemAtPosition(posicion);
 
-                CharSequence texto = "Seleccionado: " + elegido.getdescripcion();
-                Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
-                toast.show();
-            }
-        });
+        //        CharSequence texto = "Seleccionado: " + elegido.getdescripcion();
+        //        Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+        //        toast.show();
+        //    }
+        // });
     }
-
 
 
 
@@ -59,6 +58,17 @@ public class MainActivity extends ActionBarActivity {
         enviar(to, cc, "Reserva VE desde App", "El cliente Matias ha realizado la reserva" +
                 "de la VE ");
     }
+
+    public void onMasInfo(View v) {
+       Intent DetalleProducto = new Intent(getApplicationContext(),DetalleProducto.class);
+
+        //DetalleProducto.putExtra("descripcion", "TITULO VE");
+        startActivity(DetalleProducto);
+    }
+
+
+
+
 
     private void enviar (String[] to,String[] cc,String asunto, String mensaje) {
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
