@@ -1,9 +1,12 @@
 package com.herprogramacion.intercapappBeta;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +20,7 @@ import android.widget.Toast;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     // Atributos
     ListView listView;
@@ -51,6 +54,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    public void onMasInfo(View v) {
+        Intent DetalleProducto = new Intent(getApplicationContext(),DetalleProducto.class);
+
+        //DetalleProducto.putExtra("nroPool", "TITULO VE");
+        startActivity(DetalleProducto);
+    }
 
     public void onClick(View v){
         String[] to = {"mbascolo@intercap.com.ar"};
@@ -58,16 +67,6 @@ public class MainActivity extends ActionBarActivity {
         enviar(to, cc, "Reserva VE desde App", "El cliente Matias ha realizado la reserva" +
                 "de la VE ");
     }
-
-    public void onMasInfo(View v) {
-       Intent DetalleProducto = new Intent(getApplicationContext(),DetalleProducto.class);
-
-        //DetalleProducto.putExtra("descripcion", "TITULO VE");
-        startActivity(DetalleProducto);
-    }
-
-
-
 
 
     private void enviar (String[] to,String[] cc,String asunto, String mensaje) {

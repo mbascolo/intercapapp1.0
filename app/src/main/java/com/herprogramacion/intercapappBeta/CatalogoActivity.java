@@ -2,6 +2,7 @@ package com.herprogramacion.intercapappBeta;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Spinner;
 
 import com.herprogramacion.mysocialmediapotenciado.R;
 
-public class CatalogoActivity extends ActionBarActivity {
+public class CatalogoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -20,6 +20,11 @@ public class DetalleProducto extends ActionBarActivity {
         setContentView(R.layout.activity_detalle_producto);
     }
 
+    //Intent intent = getIntent();
+    //Bundle extras = intent.getExtras();
+    //String nroPool = extras.getString(Post.nroPool);
+    //String descripcion = extras.getString(Post.descripcion);
+
     private void initialize(){
         tituloDatosVE = (TextView)findViewById(R.id.tituloDatosVE);
     }

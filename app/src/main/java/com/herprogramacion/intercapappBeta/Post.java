@@ -1,10 +1,19 @@
 package com.herprogramacion.intercapappBeta;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
 import java.io.Serializable;
 
 
 @SuppressWarnings("serial")
 public class Post implements Serializable {
+
+
+
     // Atributos
     private String nroPool;
     private String descripcion;
@@ -17,7 +26,9 @@ public class Post implements Serializable {
         this.nroPool = nroPool;
         this.descripcion = descripcion;
         this.pathImagenBannerMiniatura = pathImagenBannerMiniatura;
+
     }
+
 
     public String getdescripcion() {
         return descripcion;
