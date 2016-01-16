@@ -13,23 +13,35 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.herprogramacion.mysocialmediapotenciado.R;
 
+import org.w3c.dom.Text;
 
+import java.io.Serializable;
+
+
+@SuppressWarnings("serial")
 public class MainActivity extends AppCompatActivity {
 
     // Atributos
     ListView listView;
     ArrayAdapter adapter;
+    private TextView titulo_extra , descrip_extra;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        titulo_extra = (TextView)findViewById(R.id.textoTitulo);
+        descrip_extra = (TextView)findViewById(R.id.textoDescripcion);
+
 
         // Obtener instancia de la lista
         listView= (ListView) findViewById(R.id.listView);
@@ -39,25 +51,27 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         //Click en items
-        //listView.setClickable(true);
+       // listView.setClickable(true);
 
         //listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        //    @Override
-        //    public void onItemClick(AdapterView<?> parent, View view, int posicion, long id) {
-        //        Post elegido = (Post) parent.getItemAtPosition(posicion);
+         //   @Override
+         //  public void onItemClick(AdapterView<?> parent, View view, int posicion, long id) {
+         //      Post elegido = (Post) parent.getItemAtPosition(posicion);
 
-        //        CharSequence texto = "Seleccionado: " + elegido.getdescripcion();
-        //        Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
-        //        toast.show();
-        //    }
-        // });
+          //     CharSequence texto = "Seleccionado: " + elegido.getdescripcion();
+          //     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+          //     toast.show();
+          // }
+         //});
     }
 
 
     public void onMasInfo(View v) {
         Intent DetalleProducto = new Intent(getApplicationContext(),DetalleProducto.class);
 
-        //DetalleProducto.putExtra("nroPool", "TITULO VE");
+        //DetalleProducto.putExtra("descPool",descrip_extra.getText().toString());
+        DetalleProducto.putExtra("descPool","Descripcion del Pool");
+        DetalleProducto.putExtra("tituloPool","Titulo del Pool");
         startActivity(DetalleProducto);
     }
 

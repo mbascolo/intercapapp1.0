@@ -91,6 +91,14 @@
             android:name="com.herprogramacion.intercapappBeta.DetalleProducto"
             android:label="@string/title_activity_detalle_producto" >
         </activity>
+        <activity
+            android:name="com.herprogramacion.intercapappBeta.Db.ListarUsuarios"
+            android:label="@string/title_activity_listar_usuarios" >
+        </activity>
+        <activity
+            android:name="com.herprogramacion.intercapappBeta.Email.EnvioCorreo"
+            android:label="@string/title_activity_envio_correo" >
+        </activity>
     </application>
 
 </manifest>

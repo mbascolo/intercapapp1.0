@@ -27,4 +27,7 @@ dependencies {
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
     compile 'com.android.support:appcompat-v7:22.1.0'
+    compile files ('libs/activation.jar');
+    compile files ('additionnal.jar');
+    compile files ('mail.jar');
 }

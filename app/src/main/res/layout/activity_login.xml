@@ -19,7 +19,8 @@ tools:context="com.herprogramacion.intercapappBeta.LoginActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LoginActivity"
-        android:layout_alignParentLeft="true">
+        android:layout_alignParentLeft="true"
+        android:id="@+id/linearLayout2">
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,7 +35,7 @@ tools:context="com.herprogramacion.intercapappBeta.LoginActivity">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/inputUsuario"
+            android:id="@+id/txtUsuario"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -49,7 +50,7 @@ tools:context="com.herprogramacion.intercapappBeta.LoginActivity">
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/inputPasword" />
+            android:id="@+id/txtPass" />
 
         <Button
             android:layout_width="wrap_content"
@@ -63,6 +64,14 @@ tools:context="com.herprogramacion.intercapappBeta.LoginActivity">
             android:textColor="#FFF"
 
             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textError"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
     </LinearLayout>
 
 </RelativeLayout>

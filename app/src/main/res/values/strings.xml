@@ -14,6 +14,9 @@
     <string name="title_activity_detalle_producto">Detalle del Item</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_listar_usuarios">ListarUsuarios</string>
+    <string name="title_activity_envio_email">EnvioEmail</string>
+    <string name="title_activity_envio_correo">EnvioCorreo</string>
 
 
 </resources>
