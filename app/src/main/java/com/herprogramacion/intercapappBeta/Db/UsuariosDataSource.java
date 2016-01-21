@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
  */
 public class UsuariosDataSource {
 
-    //Metainformación de la base de datos
+    //Metainformacion de la base de datos
     public static final String USUARIOS_TABLE_NAME = "usuarios";
     public static final String STRING_TYPE = "text";
     public static final String INT_TYPE = "integer";
@@ -22,7 +22,7 @@ public class UsuariosDataSource {
         public static final String PASS_USUARIO = "password";
     }
 
-    //Script de Creación de la tabla Clientes
+    //Script de Creacion de la tabla Clientes
     public static final String CREATE_USUARIOS_SCRIPT =
             "create table "+USUARIOS_TABLE_NAME+"(" +
                     ColumnaUsuarios.ID_USUARIOS+" "+INT_TYPE+" primary key autoincrement," +
@@ -31,7 +31,7 @@ public class UsuariosDataSource {
 
 
 
-    //Creación de la base de datos
+    //Creacion de la base de datos
     public static final String INSERT_USUARIOS_SCRIPT =
             "insert into "+USUARIOS_TABLE_NAME+" values(" +
                     "null," + "\"mbascolo\"," + "\"matias\")," +

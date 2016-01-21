@@ -96,8 +96,8 @@
             android:label="@string/title_activity_listar_usuarios" >
         </activity>
         <activity
-            android:name="com.herprogramacion.intercapappBeta.Email.EnvioCorreo"
-            android:label="@string/title_activity_envio_correo" >
+            android:name="com.herprogramacion.intercapappBeta.Email.SendMailActivity"
+            android:label="@string/title_activity_email_form" >
         </activity>
     </application>
 

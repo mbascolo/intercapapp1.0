@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.herprogramacion.intercapappBeta.Email.SendMailActivity;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
 public class HomeActivity extends ActionBarActivity {
@@ -22,6 +23,7 @@ public class HomeActivity extends ActionBarActivity {
         Button btn_ventas = (Button)findViewById(R.id.btn_ventas);
         Button btn_catalogo = (Button)findViewById(R.id.btn_catalogo);
         Button btn_ctacte = (Button)findViewById(R.id.btn_ctacte);
+        Button btn_enviar_correo = (Button)findViewById(R.id.btn_enviar_correo);
 
         btn_ventas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +49,17 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
+        btn_enviar_correo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,SendMailActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
-
-
-
-
-
 
 
     @Override

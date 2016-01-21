@@ -19,7 +19,7 @@ public class CatalogoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogo);
 
-        //Sipnners (menus selección)
+        //Sipnners (menus seleccion)
 
         final String[] datosMarcas = new String[]{"Pirelli", "Ama", "Motul"};
         ArrayAdapter<String> adaptadorMarcas = new ArrayAdapter<String>(this,R.layout.ebiz_spinner_item,datosMarcas);

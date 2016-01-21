@@ -1,28 +1,18 @@
 package com.herprogramacion.intercapappBeta;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.herprogramacion.intercapappBeta.Email.SendMailActivity;
 import com.herprogramacion.mysocialmediapotenciado.R;
-
-import org.w3c.dom.Text;
-
-import java.io.Serializable;
 
 
 @SuppressWarnings("serial")
@@ -123,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if  (id == R.id.activity_email) {
-            Intent envioEmail = new Intent(getApplicationContext(),EmailActivity.class);
+            Intent envioEmail = new Intent(getApplicationContext(), SendMailActivity.class);
             startActivity(envioEmail);
         }
 

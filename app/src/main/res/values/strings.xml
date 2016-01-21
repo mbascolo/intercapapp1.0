@@ -17,6 +17,8 @@
     <string name="title_activity_listar_usuarios">ListarUsuarios</string>
     <string name="title_activity_envio_email">EnvioEmail</string>
     <string name="title_activity_envio_correo">EnvioCorreo</string>
+    <string name="title_activity_formulario_email">FormularioEmail</string>
+    <string name="title_activity_email_form">EmailFormActivity</string>
 
 
 </resources>
