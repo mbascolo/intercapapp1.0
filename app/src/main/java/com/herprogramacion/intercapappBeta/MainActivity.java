@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.herprogramacion.intercapappBeta.Email.FormReservaActivity;
 import com.herprogramacion.intercapappBeta.Email.SendMailActivity;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if  (id == R.id.activity_email) {
-            Intent envioEmail = new Intent(getApplicationContext(), SendMailActivity.class);
+            Intent envioEmail = new Intent(getApplicationContext(), FormReservaActivity.class);
             startActivity(envioEmail);
         }
 

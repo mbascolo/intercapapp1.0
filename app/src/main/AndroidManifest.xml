@@ -27,7 +27,7 @@
         android:logo="@drawable/nubeblanca"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.herprogramacion.intercapappBeta.LoginActivity"
+            android:name="com.herprogramacion.intercapappBeta.Email.FormReservaActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,10 +68,6 @@
             android:label="@string/title_activity_acerca_de" >
         </activity>
         <activity
-            android:name="com.herprogramacion.intercapappBeta.EmailActivity"
-            android:label="@string/title_activity_email" >
-        </activity>
-        <activity
             android:name="com.herprogramacion.intercapappBeta.MainActivity"
             android:label="@string/ventas_especiales" >
         </activity>
@@ -99,6 +95,10 @@
             android:name="com.herprogramacion.intercapappBeta.Email.SendMailActivity"
             android:label="@string/title_activity_email_form" >
         </activity>
+        <!--<activity
+            android:name="com.herprogramacion.intercapappBeta.Email.FormReservaActivity"
+            android:label="@string/title_activity_email_form" >
+        </activity>-->
     </application>
 
 </manifest>

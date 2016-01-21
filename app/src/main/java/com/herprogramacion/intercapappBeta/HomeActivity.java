@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.herprogramacion.intercapappBeta.Email.FormReservaActivity;
 import com.herprogramacion.intercapappBeta.Email.SendMailActivity;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
@@ -52,7 +53,7 @@ public class HomeActivity extends ActionBarActivity {
         btn_enviar_correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,SendMailActivity.class);
+                Intent intent = new Intent(HomeActivity.this,FormReservaActivity.class);
                 startActivity(intent);
             }
         });

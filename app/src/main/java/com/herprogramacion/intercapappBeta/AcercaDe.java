@@ -42,11 +42,6 @@ public class AcercaDe extends ActionBarActivity {
             startActivity(acercaDe);
         }
 
-        if  (id == R.id.activity_email) {
-            Intent envioEmail = new Intent(getApplicationContext(),EmailActivity.class);
-            startActivity(envioEmail);
-        }
-
 
 
         return super.onOptionsItemSelected(item);
