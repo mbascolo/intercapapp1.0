@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reservar"
-            android:onClick="onClick"
+            android:onClick="onReservar"
             android:background="#FF9933" android:textColor="#FFF" android:shadowColor="#CCC"
             android:id="@+id/btn_reservar2"
             android:layout_gravity="center_horizontal" />

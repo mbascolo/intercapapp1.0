@@ -66,25 +66,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(DetalleProducto);
     }
 
-    public void onClick(View v){
-        String[] to = {"mbascolo@intercap.com.ar"};
-        String[] cc = {"mbascolo@gmail.com"};
-        enviar(to, cc, "Reserva VE desde App", "El cliente Matias ha realizado la reserva" +
-                "de la VE ");
-    }
+    public void onReservar(View v){
+
+        Intent ReservaProducto = new Intent(getApplicationContext(),FormReservaActivity.class);
+
+        //ReservaProducto.putExtra("nroPool","1254");
+        ReservaProducto.putExtra("nroVta","1253");
+        ReservaProducto.putExtra("tituloVta","Este es el título de la ve");
+        startActivity(ReservaProducto);
 
 
-    private void enviar (String[] to,String[] cc,String asunto, String mensaje) {
-        Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        //String[] to = direccionesEmail;
-        //String[] cc = copias;
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
-        emailIntent.putExtra(Intent.EXTRA_CC, cc);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, asunto);
-        emailIntent.putExtra(Intent.EXTRA_TEXT, mensaje);
-        emailIntent.setType("message/rfc822");
-        startActivity(Intent.createChooser(emailIntent, "Email"));
     }
 
 
