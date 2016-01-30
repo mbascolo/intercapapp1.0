@@ -93,10 +93,10 @@
     <orderEntry type="library" exported="" name="mail" level="project" />
     <orderEntry type="library" exported="" name="1_mail" level="project" />
     <orderEntry type="library" exported="" name="bolts-applinks-1.4.0" level="project" />
-    <orderEntry type="library" exported="" name="parse-android-1.12.0" level="project" />
     <orderEntry type="library" exported="" name="additionnal" level="project" />
     <orderEntry type="library" exported="" name="1_additionnal" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.1.0" level="project" />
+    <orderEntry type="library" exported="" name="parse-android-1.13.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.1.0" level="project" />
     <orderEntry type="library" exported="" name="activation" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.1.0" level="project" />

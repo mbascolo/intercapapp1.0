@@ -7,8 +7,11 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import javax.mail.search.IntegerComparisonTerm;
 
 public class SendMailTask extends AsyncTask {
 
@@ -21,7 +24,7 @@ public class SendMailTask extends AsyncTask {
 
     protected void onPreExecute() {
         statusDialog = new ProgressDialog(sendMailActivity);
-        statusDialog.setMessage("Getting ready...");
+        statusDialog.setMessage("Preparando...");
         statusDialog.setIndeterminate(false);
         statusDialog.setCancelable(false);
         statusDialog.show();
@@ -37,9 +40,9 @@ public class SendMailTask extends AsyncTask {
                     args[4].toString());
             publishProgress("Preparing mail message....");
             androidEmail.createEmailMessage();
-            publishProgress("Sending email....");
+            publishProgress("Enviando....");
             androidEmail.sendEmail();
-            publishProgress("Email Sent.");
+            publishProgress("Email enviado.");
             Log.i("SendMailTask", "Mail Sent.");
         } catch (Exception e) {
             publishProgress(e.getMessage());

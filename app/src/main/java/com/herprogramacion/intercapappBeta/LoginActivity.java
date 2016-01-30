@@ -14,10 +14,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.herprogramacion.intercapappBeta.Db.UsuariosDataSource;
 import com.herprogramacion.mysocialmediapotenciado.R;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,21 +30,38 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private TextView nombre_usuario,pass_usuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        nombre_usuario = (TextView)findViewById(R.id.txtUsuario);
+        pass_usuario = (TextView)findViewById(R.id.txtPass);
 
         //Creamos nuevo objeto de base de datos
         UsuariosDataSource dataSource = new UsuariosDataSource(this);
     }
 
     public void OnClick(View v){
-        Intent principal = new Intent(this,HomeActivity.class);
-        startActivity(principal);
+
+        validaUsuario(nombre_usuario.getText().toString(), pass_usuario.getText().toString());
 
     }
 
+    public void validaUsuario(String usuario, String pass) {
+
+        if(usuario.equals("admin") && pass.equals("admin")){
+            Intent principal = new Intent(this,HomeActivity.class);
+            startActivity(principal);
+
+        } else if (usuario.equals("") && pass.equals("")) {
+
+            Toast.makeText(LoginActivity.this,"Ingrese los datos por favor",Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
 
     @Override

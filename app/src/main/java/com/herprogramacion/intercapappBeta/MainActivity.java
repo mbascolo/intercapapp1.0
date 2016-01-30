@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         //ReservaProducto.putExtra("nroPool","1254");
         ReservaProducto.putExtra("nroVta","1253");
-        ReservaProducto.putExtra("tituloVta","Este es el título de la ve");
+        ReservaProducto.putExtra("tituloVta","Este es el ttulo de la ve");
         startActivity(ReservaProducto);
 
 
