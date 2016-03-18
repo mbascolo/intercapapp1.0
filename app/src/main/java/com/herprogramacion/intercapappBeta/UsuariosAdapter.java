@@ -8,50 +8,33 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.herprogramacion.mysocialmediapotenciado.R;
+
+import javax.xml.transform.Result;
 
 
 public class UsuariosAdapter extends ArrayAdapter {
 
     // Atributos
-    private String URL_BASE = "http://intercapweb.com.ar/TiendaVirtualv3/rs/usuarios";
-    private static final String URL_JSON = "/lista";
+
+    private static final String URL_JSON_USUARIO = "http://intercapweb.com.ar/TiendaVirtualv3/rs/usuario/login/";
+    private static final String URL_JSON_PASS = "http://intercapweb.com.ar/TiendaVirtualv3/rs/usuario/login/"+URL_JSON_USUARIO+"/";
     private static final String TAG = "UsuariosAdapter";
-    ListaUsuarios usuarios;
+    ResultadoLogin resultadoLogin;
 
     public UsuariosAdapter(Context context) {
         super(context,0);
 
-        // Añadir petición GSON a la cola
-        MySocialMediaSingleton.getInstance(getContext()).addToRequestQueue(
-                new GsonRequest<ListaUsuarios>(
-                        URL_BASE+URL_JSON,
-                        ListaUsuarios.class,
-                        null,
-                        new Response.Listener<ListaUsuarios>(){
-                            @Override
-                            public void onResponse(ListaUsuarios response) {
-                                usuarios = response;
-                                notifyDataSetChanged();
-                            }
-                        },
-                        new Response.ErrorListener(){
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.d(TAG, "Error Volley:"+ error.getMessage());
-                            }
-                        }
-                )
 
-        );
+
+
     }
 
-    @Override
-    public int getCount() {
-        return usuarios != null ? usuarios.getItems().size() : 0;
-    }
+
 
 
 

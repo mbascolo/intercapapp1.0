@@ -20,6 +20,7 @@
     <string name="title_activity_formulario_email">FormularioEmail</string>
     <string name="title_activity_email_form">Formulario de reserva</string>
     <string name="title_activity_form_reserva">Form de reserva</string>
+    <string name="title_activity_leer_url">LeerURL</string>
 
 
 </resources>

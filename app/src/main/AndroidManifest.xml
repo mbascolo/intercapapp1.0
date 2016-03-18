@@ -95,9 +95,14 @@
             android:name="com.herprogramacion.intercapappBeta.Email.SendMailActivity"
             android:label="@string/title_activity_email_form" >
         </activity>
-       <activity
+        <activity
             android:name="com.herprogramacion.intercapappBeta.Email.FormReservaActivity"
-            android:label="@string/title_activity_email_form" android:theme="@style/AppTheme" >
+            android:label="@string/title_activity_email_form"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name="com.herprogramacion.intercapappBeta.LeerURL"
+            android:label="@string/title_activity_leer_url" >
         </activity>
     </application>
 

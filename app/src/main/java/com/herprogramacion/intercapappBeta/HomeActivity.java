@@ -25,6 +25,7 @@ public class HomeActivity extends ActionBarActivity {
         Button btn_catalogo = (Button)findViewById(R.id.btn_catalogo);
         Button btn_ctacte = (Button)findViewById(R.id.btn_ctacte);
         Button btn_enviar_correo = (Button)findViewById(R.id.btn_enviar_correo);
+        Button btn_ir_leer_url = (Button)findViewById(R.id.btn_ir_leer);
 
         btn_ventas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,14 @@ public class HomeActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,FormReservaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_ir_leer_url.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,LeerURL.class);
                 startActivity(intent);
             }
         });
