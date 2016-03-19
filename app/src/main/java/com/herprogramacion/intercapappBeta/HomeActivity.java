@@ -22,10 +22,10 @@ public class HomeActivity extends ActionBarActivity {
 
         //Instancio los botones
         Button btn_ventas = (Button)findViewById(R.id.btn_ventas);
-        Button btn_catalogo = (Button)findViewById(R.id.btn_catalogo);
-        Button btn_ctacte = (Button)findViewById(R.id.btn_ctacte);
-        Button btn_enviar_correo = (Button)findViewById(R.id.btn_enviar_correo);
-        Button btn_ir_leer_url = (Button)findViewById(R.id.btn_ir_leer);
+        //Button btn_catalogo = (Button)findViewById(R.id.btn_catalogo);
+        //Button btn_ctacte = (Button)findViewById(R.id.btn_ctacte);
+        //Button btn_enviar_correo = (Button)findViewById(R.id.btn_enviar_correo);
+        //Button btn_ir_leer_url = (Button)findViewById(R.id.btn_ir_leer);
 
         btn_ventas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,37 +35,37 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
-        btn_catalogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,CatalogoActivity.class);
-                startActivity(intent);
-            }
-        });
+       // btn_catalogo.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+       //     public void onClick(View view) {
+       //         Intent intent = new Intent(HomeActivity.this,CatalogoActivity.class);
+       //         startActivity(intent);
+       //     }
+        //});
 
-        btn_ctacte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,CtacteActivity.class);
-                startActivity(intent);
-            }
-        });
+       // btn_ctacte.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Intent intent = new Intent(HomeActivity.this,CtacteActivity.class);
+        //        startActivity(intent);
+        //    }
+       // });
 
-        btn_enviar_correo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,FormReservaActivity.class);
-                startActivity(intent);
-            }
-        });
+       // btn_enviar_correo.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+       //     public void onClick(View view) {
+       //         Intent intent = new Intent(HomeActivity.this,FormReservaActivity.class);
+       //         startActivity(intent);
+       //     }
+       // });
 
-        btn_ir_leer_url.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,LeerURL.class);
-                startActivity(intent);
-            }
-        });
+       // btn_ir_leer_url.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+       //     public void onClick(View view) {
+       //         Intent intent = new Intent(HomeActivity.this,LeerURL.class);
+       //         startActivity(intent);
+       //     }
+       // });
 
 
 

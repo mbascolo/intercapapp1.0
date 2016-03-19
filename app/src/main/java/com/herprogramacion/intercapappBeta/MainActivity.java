@@ -61,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
         Intent DetalleProducto = new Intent(getApplicationContext(),DetalleProducto.class);
 
         //DetalleProducto.putExtra("descPool",descrip_extra.getText().toString());
-        DetalleProducto.putExtra("descPool","Descripcion del Pool");
         DetalleProducto.putExtra("tituloPool","Titulo del Pool");
+        DetalleProducto.putExtra("descPool","Descripcion del Pool");
+
         startActivity(DetalleProducto);
     }
 

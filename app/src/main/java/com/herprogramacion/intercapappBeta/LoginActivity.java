@@ -2,7 +2,9 @@ package com.herprogramacion.intercapappBeta;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,15 +13,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.herprogramacion.intercapappBeta.Usuarios;
 
 import com.google.gson.Gson;
-import com.herprogramacion.intercapappBeta.Db.UsuariosDataSource;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
 import org.w3c.dom.Text;
@@ -38,29 +41,57 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog pd;
 
     private TextView nombre_usuario,pass_usuario;
+    private Button btn_guardar_pref;
+    private CheckBox check_recordar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        btn_guardar_pref = (Button)findViewById(R.id.btnGuardarPref);
+        check_recordar = (CheckBox)findViewById(R.id.checkBoxRecordar);
         nombre_usuario = (TextView)findViewById(R.id.txtUsuario);
         pass_usuario = (TextView)findViewById(R.id.txtPass);
 
         context=this;
-
-
-
+        CargarPreferencias();
     }
 
+
+    public void CargarPreferencias(){
+        //Guarda las preferencias en un xml llamado PreferenciasUsuario
+        SharedPreferences misPreferencias = getSharedPreferences("PreferenciasUsuario", Context.MODE_PRIVATE);
+        check_recordar.setChecked(misPreferencias.getBoolean("checked",false));
+        nombre_usuario.setText(misPreferencias.getString("nombre",""));
+        pass_usuario.setText(misPreferencias.getString("pass",""));
+    }
+
+    public void GuardarPreferencias(){
+
+        SharedPreferences misPreferencias = getSharedPreferences("PreferenciasUsuario", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = misPreferencias.edit();
+        boolean valor = check_recordar.isChecked();
+        String nombre = nombre_usuario.getText().toString();
+        String pass = pass_usuario.getText().toString();
+        editor.putBoolean("checked",valor);
+        editor.putString("nombre",nombre);
+        editor.putString("pass",pass);
+        editor.commit();
+    }
+
+
+    //Botón Ingresar
     public void OnClick(View v){
-
         BackTask bt=new BackTask();
-        bt.execute("http://www.intercapweb.com.ar/TiendaVirtualv3/rs/usuario/login/"+nombre_usuario.getText()+"/"+pass_usuario.getText());
-
-
+        bt.execute("http://www.intercapweb.com.ar/TiendaVirtualv3/rs/usuario/login/" + nombre_usuario.getText() + "/" + pass_usuario.getText());
     }
 
+    //Botón guardar preferencias
+    public void OnClickPref(View v){
+        GuardarPreferencias();
+    }
 
 
     //background process to download the file from internet
@@ -123,6 +154,7 @@ public class LoginActivity extends AppCompatActivity {
             if(text.equals("Autorizado")){
 
                 Intent principal = new Intent(LoginActivity.this,HomeActivity.class);
+                finish();
                 startActivity(principal);
 
             } else if (text.equals("Password incorrecto")) {
@@ -131,7 +163,7 @@ public class LoginActivity extends AppCompatActivity {
 
             } else if (text.equals("")) {
 
-                Toast.makeText(LoginActivity.this,"Ingrese su usuario y contraseña por favor.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"Ingrese su usuario y contraseNa por favor.",Toast.LENGTH_SHORT).show();
             }
 
         }
