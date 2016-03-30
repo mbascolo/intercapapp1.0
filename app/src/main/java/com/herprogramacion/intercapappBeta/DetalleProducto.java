@@ -3,13 +3,14 @@ package com.herprogramacion.intercapappBeta;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.herprogramacion.mysocialmediapotenciado.R;
 
-public class DetalleProducto extends ActionBarActivity {
+public class DetalleProducto extends AppCompatActivity {
 
 
     TextView tituloPool_dp, descPool_dp;
@@ -26,8 +27,8 @@ public class DetalleProducto extends ActionBarActivity {
         Bundle extras = intent.getExtras();
         if (extras != null) { //veo si tiene los datos
 
-            String datoTitulo = (String)extras.get("tituloPool");
-            String datoDescripcion = (String)extras.get("descPool");
+            String datoTitulo = (String)extras.get("nroVta");
+            String datoDescripcion = (String)extras.get("tituloVta");
 
             tituloPool_dp.setText(datoTitulo);
             descPool_dp.setText(datoDescripcion);

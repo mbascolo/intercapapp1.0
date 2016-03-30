@@ -1,15 +1,20 @@
 package com.herprogramacion.intercapappBeta;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.herprogramacion.intercapappBeta.Post;
 
 import com.herprogramacion.intercapappBeta.Email.FormReservaActivity;
 import com.herprogramacion.intercapappBeta.Email.SendMailActivity;
@@ -22,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     // Atributos
     ListView listView;
     ArrayAdapter adapter;
-    private TextView titulo_extra , descrip_extra;
+    TextView titulo_extra , descrip_extra;
+    String tituloextra, desc, nrop;
 
 
     @Override
@@ -30,52 +36,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        titulo_extra = (TextView)findViewById(R.id.textoTitulo);
-        descrip_extra = (TextView)findViewById(R.id.textoDescripcion);
-
-
         // Obtener instancia de la lista
         listView= (ListView) findViewById(R.id.listView);
 
         // Crear adaptador
         adapter = new PostAdapter(this);
         listView.setAdapter(adapter);
-
-        //Click en items
-       // listView.setClickable(true);
-
-        //listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-         //   @Override
-         //  public void onItemClick(AdapterView<?> parent, View view, int posicion, long id) {
-         //      Post elegido = (Post) parent.getItemAtPosition(posicion);
-
-          //     CharSequence texto = "Seleccionado: " + elegido.getdescripcion();
-          //     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
-          //     toast.show();
-          // }
-         //});
+        titulo_extra = (TextView)listView.findViewById(R.id.textoTitulo);
+        descrip_extra = (TextView)listView.findViewById(R.id.textoDescripcion);
     }
 
 
     public void onMasInfo(View v) {
+
         Intent DetalleProducto = new Intent(getApplicationContext(),DetalleProducto.class);
 
         //DetalleProducto.putExtra("descPool",descrip_extra.getText().toString());
         DetalleProducto.putExtra("tituloPool","Titulo del Pool");
-        DetalleProducto.putExtra("descPool","Descripcion del Pool");
+        DetalleProducto.putExtra("descPool", "Descripcion del Pool");
 
         startActivity(DetalleProducto);
     }
 
     public void onReservar(View v){
 
-        Intent ReservaProducto = new Intent(getApplicationContext(),FormReservaActivity.class);
 
-        //ReservaProducto.putExtra("nroPool","1254");
-        ReservaProducto.putExtra("nroVta","1253");
-        ReservaProducto.putExtra("tituloVta","Este es el ttulo de la ve");
-        startActivity(ReservaProducto);
+       Intent ReservaProducto = new Intent(getApplicationContext(),FormReservaActivity.class);
 
+        //Toast.makeText(MainActivity.this,"Debería ser así",Toast.LENGTH_SHORT).show();
+       ReservaProducto.putExtra("nroVta","1256");
+       ReservaProducto.putExtra("tituloVta", "ESTE ES EL TITULO DE LA VENTA ESPECIAL");
+       startActivity(ReservaProducto);
 
     }
 

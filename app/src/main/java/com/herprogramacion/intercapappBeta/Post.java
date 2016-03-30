@@ -15,7 +15,7 @@ public class Post implements Serializable {
 
 
     // Atributos
-    private String nroPool;
+    public static String nroPool;
     private String descripcion;
     private String pathImagenBannerMiniatura;
 

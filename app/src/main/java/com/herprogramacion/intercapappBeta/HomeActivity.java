@@ -1,23 +1,37 @@
 package com.herprogramacion.intercapappBeta;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.telecom.TelecomManager;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.herprogramacion.intercapappBeta.Email.FormReservaActivity;
 import com.herprogramacion.intercapappBeta.Email.SendMailActivity;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
-public class HomeActivity extends ActionBarActivity {
+public class HomeActivity extends AppCompatActivity {
+
+    TelephonyManager manager;
+    TextView mensajeManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mensajeManager = (TextView)findViewById(R.id.textViewManager);
+        manager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        StringBuilder builder = new StringBuilder();
+        builder.append("Imei:").append(manager.getDeviceId()).append("\n");
+        builder.append("Operador:").append(manager.getNetworkOperatorName());
+        mensajeManager.setText(builder.toString());
 
 
         //Instancio los botones

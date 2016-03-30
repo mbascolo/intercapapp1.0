@@ -77,22 +77,12 @@ tools:context="com.herprogramacion.intercapappBeta.LoginActivity">
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recordar datos"
+        android:text="Recordar datos de acceso"
         android:id="@+id/checkBoxRecordar"
         android:layout_marginTop="50dp"
         android:checked="false"
         android:layout_below="@+id/linearLayout2"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Guardar preferencias"
-        android:id="@+id/btnGuardarPref"
-        android:layout_below="@+id/checkBoxRecordar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:textSize="12dp"
-        android:onClick="OnClickPref" />
+        android:onClick="OnCheck" />
 
 </RelativeLayout>

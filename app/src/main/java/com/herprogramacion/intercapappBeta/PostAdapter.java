@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.herprogramacion.intercapappBeta.Email.FormReservaActivity;
 import com.herprogramacion.mysocialmediapotenciado.R;
 
 
@@ -51,6 +52,7 @@ public class PostAdapter extends ArrayAdapter {
         );
     }
 
+
     @Override
     public int getCount() {
         return pool != null ? pool.getItems().size() : 0;
@@ -84,6 +86,7 @@ public class PostAdapter extends ArrayAdapter {
                 findViewById(R.id.textoDescripcion);
         NetworkImageView imagenPost = (NetworkImageView) listItemView.
                 findViewById(R.id.imagenPost);
+
 
         // Actualizar los Views
         textoTitulo.setText(item.getdescripcion());
